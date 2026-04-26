@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkatesh Krishnan - AI Product Manager</title>
+    <meta name="description" content="Portfolio of Venkatesh Krishnan, AI Product Manager & Strategist">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link id="theme-stylesheet" rel="stylesheet" href="theme-v0.5.css">
+    <script>
+        // Early theme detection — swap stylesheet before body paints to avoid flash
+        (function() {
+            try {
+                var d = JSON.parse(localStorage.getItem('portfolioEditorData'));
+                if (d && d.settings && d.settings.ui_version && d.settings.ui_version !== 'v0.5') {
+                    document.getElementById('theme-stylesheet').href = 'theme-' + d.settings.ui_version + '.css';
+                }
+            } catch(e) {}
+        })();
+    </script>
+    
+    <!-- Load data first -->
+    <script src="data.js"></script>
+</head>
+<body>
+    <!-- Full-screen Loading Mask (theme-aware) -->
+    <div id="theme-loader" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease; font-family: 'JetBrains Mono', monospace;">
+        <!-- Animated spinner ring -->
+        <div id="loader-ring" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid transparent; border-top-color: currentColor; animation: loaderSpin 1s linear infinite; margin-bottom: 30px;"></div>
+        <div id="loader-percentage" style="font-size: 3.5rem; font-weight: bold; letter-spacing: 0.1em;">0%</div>
+        <div id="loader-text" style="font-size: 0.8rem; letter-spacing: 0.2em; margin-top: 12px; opacity: 0.6; text-transform: uppercase;">Loading Portfolio</div>
+        <style>
+            @keyframes loaderSpin { to { transform: rotate(360deg); } }
+        </style>
+    </div>
+    <script>
+        // Immediately detect theme and style loader BEFORE anything else paints
+        (function() {
+            var cachedData = null;
+            try { 
+                cachedData = JSON.parse(localStorage.getItem('portfolioEditorData')); 
+            } catch(e) {}
+            
+            // Use local storage if available, otherwise default to v0.5
+            var ver = (cachedData && cachedData.settings && cachedData.settings.ui_version) || 'v0.5';
+            var loader = document.getElementById('theme-loader');
+            var pctEl = document.getElementById('loader-percentage');
+            var ring = document.getElementById('loader-ring');
+            
+            if (ver === 'v1.0') {
+                // Light Spatial Daylight loader (Premium Slate & Blue)
+                loader.style.backgroundColor = '#f8fafc';
+                loader.style.color = '#0f172a';
+                if (pctEl) pctEl.style.textShadow = '0 0 20px rgba(59,130,246,0.2)';
+                if (ring) { 
+                    ring.style.borderTopColor = '#3b82f6'; 
+                    ring.style.borderLeftColor = 'rgba(59,130,246,0.1)'; 
+                }
+            } else {
+                // Dark Executive loader (Pitch Black & Neon Cyan)
+                loader.style.backgroundColor = '#000';
+                loader.style.color = '#00f0ff';
+                if (pctEl) pctEl.style.textShadow = '0 0 20px rgba(0,240,255,0.4)';
+                if (ring) { 
+                    ring.style.borderTopColor = '#00f0ff'; 
+                    ring.style.borderLeftColor = 'rgba(0,240,255,0.1)'; 
+                }
+            }
+        })();
+    </script>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title gradient-text" id="hero-name" data-editable="hero.name"></h1>
+            <h2 class="hero-subtitle" id="hero-subtitle" data-editable="hero.subtitle"></h2>
+            <p class="hero-tagline" id="hero-tagline" data-editable="hero.tagline"></p>
+            <div class="hero-cta">
+                <a href="#projects" id="hero-btn-1" class="btn btn-primary" data-editable="hero.btn1_text" data-editable-href="hero.btn1_link">View Portfolio</a>
+                <a href="#contact" id="hero-btn-2" class="btn btn-outline" style="margin-left: 1rem;" data-editable="hero.btn2_text" data-editable-href="hero.btn2_link">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title gradient-text">Professional Summary</h2>
+            <div class="glass-panel">
+                <p id="about-summary" data-editable="about.summary" style="font-size: 1.1rem; letter-spacing: 0.5px;"></p>
+                <div class="stats-grid" id="stats-container">
+                    <!-- Stats injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title gradient-text">Experience Journey</h2>
+            <div class="timeline" id="experience-timeline">
+                <!-- Experience injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title gradient-text">Strategic AI Portfolio</h2>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Validation Section -->
+    <section id="training">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="section-title gradient-text">Executive AI Strategic Analysis</h2>
+            <div id="training-container" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Training injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title gradient-text">Competencies & Tech Stack</h2>
+            <div class="skills-container glass-panel" id="skills-grid">
+                <!-- Skills injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="section-title gradient-text">Education</h2>
+            <div id="education-container" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Education injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteering & Research Section -->
+    <section id="volunteering">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="section-title gradient-text">Volunteering & Research</h2>
+            <div id="volunteering-container" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Volunteering injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <section id="contact" style="min-height: 50vh;">
+        <div class="container">
+            <h2 class="section-title gradient-text" style="text-align: center;">Let's Connect</h2>
+            <div class="glass-panel" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="margin-bottom: 2rem;">Currently transitioning from Engineering Leadership to Product Management and looking for the next strategic challenge.</p>
+                
+                <div class="social-links" id="social-links">
+                    <!-- Links injected here -->
+                </div>
+                
+                <a href="resume.pdf" target="_blank" id="resume-link" class="btn btn-primary" style="margin-top: 1rem;" data-editable-href="social.resume">Download Resume PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <span class="footer-logo" id="admin-trigger">Venkatesh Krishnan // 2026</span>
+            <p style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 10px;">Designed & Built by Agentic AI</p>
+        </div>
+    </footer>
+
+    <!-- Hidden Admin Login Modal -->
+    <div id="admin-overlay"></div>
+    <div id="admin-modal" class="glass-panel">
+        <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">Admin Access</h3>
+        <input type="text" id="admin-user" class="admin-input" placeholder="Username">
+        <input type="password" id="admin-pass" class="admin-input" placeholder="Password">
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <button id="btn-login" class="btn btn-primary" style="flex: 1; padding: 8px;">Login</button>
+            <button id="btn-faceid" class="btn btn-outline" style="flex: 1; padding: 8px; display: none; align-items: center; justify-content: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M8 8h.01"></path><path d="M16 8h.01"></path><path d="M7 13a6 6 0 0 0 10 0"></path></svg>
+                FaceID
+            </button>
+            <button id="btn-cancel-login" class="btn btn-outline" style="flex: 1; padding: 8px;">Cancel</button>
+        </div>
+        <p id="admin-error" style="color: #ff4757; font-size: 0.8rem; margin-top: 10px; display: none;">Invalid credentials</p>
+    </div>
+
+    <!-- Link Edit Modal -->
+    <div id="link-edit-modal" class="glass-panel" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10000; width: 350px;">
+        <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">Edit Hyperlink</h3>
+        <input type="text" id="link-edit-input" class="admin-input" placeholder="https://...">
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <button id="btn-save-link" class="btn btn-primary" style="flex: 1; padding: 8px;">Update</button>
+            <button id="btn-cancel-link" class="btn btn-outline" style="flex: 1; padding: 8px;">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Admin Editing Toolbar -->
+    <div id="edit-toolbar" style="display:none">
+        <span id="edit-mode-label">[ Edit Mode Active ]</span>
+        <select id="admin-ui-version">
+            <option value="v0.5">v0.5 (Stark Executive)</option>
+            <option value="v1.0">v1.0 (Spatial Daylight)</option>
+        </select>
+        <button id="btn-save-edits" class="btn btn-primary" style="padding: 5px 15px; font-size: 0.9rem;">💾 Save Changes</button>
+        <button id="btn-exit-edit" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem; margin-left: 10px;">Exit</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
