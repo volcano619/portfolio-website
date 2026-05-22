@@ -727,12 +727,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function getProjectTemplate(index) {
         return `
             <div class="glass-panel project-card admin-deletable">
-                <div class="project-domain" data-editable="projects.${index}.domain">New Domain</div>
-                <h3 class="project-title" data-editable="projects.${index}.title">New Project Title</h3>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-cyan);">Problem:</strong> <span data-editable="projects.${index}.problem">Describe the problem...</span></p>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;"><strong style="color: var(--accent-cyan);">Solution:</strong> <span data-editable="projects.${index}.solution">Describe the solution...</span></p>
-                <div class="project-metrics">
-                    <div>📉 <span data-editable="projects.${index}.metrics">Key metrics...</span></div>
+                <div class="card-tilt-layer">
+                    <div class="project-domain" data-editable="projects.${index}.domain">New Domain</div>
+                    <h3 class="project-title" data-editable="projects.${index}.title">New Project Title</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-cyan);">Problem:</strong> <span data-editable="projects.${index}.problem">Describe the problem...</span></p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;"><strong style="color: var(--accent-cyan);">Solution:</strong> <span data-editable="projects.${index}.solution">Describe the solution...</span></p>
+                    <div class="project-metrics">
+                        <div>📉 <span data-editable="projects.${index}.metrics">Key metrics...</span></div>
+                    </div>
                 </div>
                 <div class="project-links">
                     <a href="#" target="_blank" class="project-action-btn btn-arch" data-editable-href="projects.${index}.link">Portfolio Detail</a>
