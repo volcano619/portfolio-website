@@ -2,13 +2,13 @@ const portfolioData = {
     "hero": {
         "name": "Venkatesh Krishnan",
         "title": "AI Product Manager",
-        "subtitle": "Technical Product Manager (AI/ML) | AI Strategy & Platform Architecture",
+        "subtitle": "AI Product Manager | AI Strategy & Platform Architecture",
     },
     "settings": {
         "ui_version": "v0.5"
     },
     "about": {
-        "summary": "Senior Technical Product Manager & AI Strategist with 8+ years of technical leadership and architectural expertise driving end-to-end product strategy, GTM execution, and business impact for enterprise AI/ML solutions. Proven track record of aligning product vision with deep technical intuition to deploy low-latency, cost-optimized AI systems that solve complex business friction and accelerate user growth.",
+        "summary": "Senior AI Product Manager & AI Strategist with 8+ years of technical leadership and architectural expertise driving end-to-end product strategy, GTM execution, and business impact for enterprise AI/ML solutions. Proven track record of aligning product vision with deep technical intuition to deploy low-latency, cost-optimized AI systems that solve complex business friction and accelerate user growth.",
         "stats": [
             { "label": "Years Experience", "value": 8.9, "suffix": "+" },
             { "label": "AI Products Designed", "value": 5, "suffix": "" },
