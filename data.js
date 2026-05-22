@@ -10,14 +10,14 @@ const portfolioData = {
     "about": {
         "summary": "Senior AI Product Manager & AI Strategist with 8+ years of technical leadership and architectural expertise driving end-to-end product strategy, GTM execution, and business impact for enterprise AI/ML solutions. Proven track record of aligning product vision with deep technical intuition to deploy low-latency, cost-optimized AI systems that solve complex business friction and accelerate user growth.",
         "stats": [
-            { "label": "Years Experience", "value": 8.9, "suffix": "+" },
+            { "label": "Years Experience", "value": "~9", "suffix": "" },
             { "label": "AI Products Designed", "value": 5, "suffix": "" },
-            { "label": "Tech Stacks Mastered", "value": 12, "suffix": "+" }
+            { "label": "Tech Stacks Mastered", "value": 4, "suffix": "+" }
         ]
     },
     "experience": [
         {
-            "role": "Senior Engineering Lead & AI Product Owner",
+            "role": "Senior Engineering Lead (AI Product Owner)",
             "company": "Persistent Systems",
             "date": "Oct '24 – Present",
             "points": [
@@ -27,7 +27,7 @@ const portfolioData = {
             ]
         },
         {
-            "role": "Solution Architect & Technical Product Lead",
+            "role": "Solution Architect (Technical Product Lead)",
             "company": "NSR Technologies",
             "date": "Apr '23 – Oct '23",
             "points": [
@@ -37,7 +37,7 @@ const portfolioData = {
             ]
         },
         {
-            "role": "Lead Software Engineer & Technical PM Lead",
+            "role": "Lead Software Engineer (Technical PM Lead)",
             "company": "Utthunga Technologies",
             "date": "Nov '22 – Mar '23",
             "points": [
@@ -47,7 +47,7 @@ const portfolioData = {
             ]
         },
         {
-            "role": "Senior Consultant & Technical Advisory",
+            "role": "Senior Consultant (Technical Advisory)",
             "company": "Neudesic Technologies",
             "date": "Mar '22 – Nov '22",
             "points": [
@@ -55,7 +55,7 @@ const portfolioData = {
             ]
         },
         {
-            "role": "Senior Technology Consultant & Feature Owner",
+            "role": "Senior Technology Consultant (Feature Owner)",
             "company": "Saviant Consulting",
             "date": "May '18 – Jul '21",
             "points": [
