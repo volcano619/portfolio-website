@@ -98,7 +98,8 @@ const portfolioData = {
             "problem": "Reliance on survey data masked 'Silent Churn', risking $7.5M/yr. Used customer discovery and RICE prioritization to design real-time sentiment alerts.",
             "solution": "Productized a CX platform utilizing a fine-tuned NLP model. Selected a custom-hosted small model over general LLM APIs to cut inference costs by 90%, keep latency under 50ms, and automate CRM action workflows.",
             "metrics": "Projected $750k annual revenue retention and projected reduction in churn detection time from 14 days to <24 hours.",
-            "link": "https://github.com/volcano619/voc-sentiment-analytics"
+            "link": "https://github.com/volcano619/voc-sentiment-analytics",
+            "demoLink": "https://huggingface.co/spaces/vnicks177/SentimentAnalysis-demo"
         },
         {
             "title": "Workforce Agility Engine",
@@ -106,7 +107,8 @@ const portfolioData = {
             "problem": "High external recruitment costs and slow time-to-staff (3-6 months) causing resource bottlenecks. Led customer discovery with HR heads to align recommendations with mobility policies.",
             "solution": "Designed a hybrid recommender system (Collaborative Filtering + Knowledge Graph) resolving the 'cold-start' problem. Implemented model explainability and bias-audit frameworks to ensure compliance.",
             "metrics": "Projecting ~$565k savings per restructuring event and a 70% reduction in time-to-staff.",
-            "link": "https://github.com/volcano619/career-learning-recommender"
+            "link": "https://github.com/volcano619/career-learning-recommender",
+            "demoLink": "https://huggingface.co/spaces/vnicks177/RecommenderSystem-demo"
         },
         {
             "title": "Automated Support System",
@@ -114,7 +116,8 @@ const portfolioData = {
             "problem": "Seasonal L1 ticket surges (30k/mo) overwhelmed IT staff ($20/ticket). Conducted a Build vs. Buy analysis comparing commercial SaaS chatbots vs. an in-house build.",
             "solution": "Architected a Tier-0 RAG Assistant using a quantized local LLM to guarantee 100% FERPA data privacy and eliminate token costs. Designed fallback UX loops to handle hallucinations.",
             "metrics": "Projected to automate 5,000 L1 tickets/mo at 85% lower cost ($2/ticket), saving $1.08M annually.",
-            "link": "https://github.com/volcano619/ai-support-rag-system"
+            "link": "https://github.com/volcano619/ai-support-rag-system",
+            "demoLink": "https://huggingface.co/spaces/vnicks177/RAGbasedsolution-demo"
         },
         {
             "title": "Hybrid Energy Demand Forecasting",
@@ -122,7 +125,8 @@ const portfolioData = {
             "problem": "Grid operators face $20B+ in losses due to forecast errors. Collaborated with operators to establish trust in AI, defining explainability as a core product requirement.",
             "solution": "Designed a Hybrid forecasting engine combining LSTM (accuracy) with Prophet (explainability). Custom-designed the loss function to penalize under-forecasting 10x more to prevent blackouts.",
             "metrics": "Modeled a 50% reduction in forecast error; projected $28M annual grid savings.",
-            "link": "https://github.com/volcano619/energy-demand-forecaster"
+            "link": "https://github.com/volcano619/energy-demand-forecaster",
+            "demoLink": "https://huggingface.co/spaces/vnicks177/TimeSeriesForecasting-demo"
         },
         {
             "title": "Industrial Visual Inspection System",
@@ -130,7 +134,8 @@ const portfolioData = {
             "problem": "Manual inspection had an 80% accuracy ceiling, risking high-cost recalls ($5M+ risk). Managed release process via shadow deployment on live production cameras.",
             "solution": "Deployed an Edge-AI CV system optimized via TensorRT for low latency. Tuned model threshold for High Recall (>99%) to minimize missed defect escapes, backed by an operator quick-verification workflow.",
             "metrics": "Modeled a 50x increase in throughput and 95% reduction in missed defects (2.7x Year-1 ROI).",
-            "link": "https://github.com/volcano619/manufacturing-defect-detector"
+            "link": "https://github.com/volcano619/manufacturing-defect-detector",
+            "demoLink": "https://huggingface.co/spaces/vnicks177/ComputerVision-demo"
         }
     ],
     "training": [
