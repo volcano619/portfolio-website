@@ -362,7 +362,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isEditMode) return;
         e.preventDefault(); // Stop navigation
         currentLinkBeingEdited = this;
-        linkInput.value = this.getAttribute('href') || '';
+        let val = this.getAttribute('href') || '';
+        const editablePath = this.getAttribute('data-editable-href');
+        if (editablePath === 'social.email') {
+            if (val.toLowerCase().startsWith('mailto:')) {
+                val = val.substring(7);
+            }
+        } else if (editablePath === 'social.phone') {
+            if (val.toLowerCase().startsWith('tel:')) {
+                val = val.substring(4);
+            }
+        }
+        linkInput.value = val;
         overlay.style.display = 'block';
         overlay.style.zIndex = '9999'; 
         linkModal.style.display = 'block';
@@ -371,7 +382,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnSaveLink.addEventListener('click', () => {
         if (currentLinkBeingEdited && linkInput.value.trim() !== '') {
-            currentLinkBeingEdited.setAttribute('href', linkInput.value.trim());
+            let val = linkInput.value.trim();
+            const editablePath = currentLinkBeingEdited.getAttribute('data-editable-href');
+            if (editablePath === 'social.email') {
+                if (!val.toLowerCase().startsWith('mailto:')) {
+                    val = 'mailto:' + val;
+                }
+            } else if (editablePath === 'social.phone') {
+                if (!val.toLowerCase().startsWith('tel:')) {
+                    val = 'tel:' + val;
+                }
+            } else {
+                // Auto-prepend https:// for general external web/social/project links if protocol is missing
+                if (!val.startsWith('#') && 
+                    !val.startsWith('/') && 
+                    !val.toLowerCase().startsWith('http://') && 
+                    !val.toLowerCase().startsWith('https://')) {
+                    val = 'https://' + val;
+                }
+            }
+            currentLinkBeingEdited.setAttribute('href', val);
         }
         closeLinkModal();
     });
