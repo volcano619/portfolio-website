@@ -209,8 +209,8 @@ const portfolioData = {
     "social": {
         "linkedin": "https://www.linkedin.com/in/venkatesh-krishnan-35353535v/",
         "github": "https://github.com/volcano619",
-        "email": "mailto:svenkatesh0635@gmail.com",
-        "phone": "tel:+919922436937"
+        "email": "mailto:venkatesh00635@gmail.com",
+        "phone": "tel:+19832132122"
     }
 };
 
